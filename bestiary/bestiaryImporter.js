@@ -1,11 +1,11 @@
 // document.getElementById('import').onclick = function() {
-window.onload = function(){
+function loadBestiaryJSON(){
   // var files = document.getElementById('selectFile').files;
 
   // var files = loadJSON();
 
   // var JSONdata;
-
+  // https://stackoverflow.com/questions/15764844/jquery-getjson-save-result-into-variable
     jQuery.getJSON("http://veniadgames.com/bestiary_data.json", processBestiary);
 };
 

@@ -90,13 +90,13 @@ function processRunes(runeJSON){
 					"rank":runeQuality(rune.rank), // this is the current rank of the rune, i.e. level 12 = legend, etc
 					"rune_id":rune.rune_id,
 					
-					"sell_value":rune.sell_value,
+					// "sell_value":rune.sell_value,
 					"set_id":runeSet(rune.set_id),
 					"slot_no":rune.slot_no,
 					"upgrade_curr":rune.upgrade_curr,
-					"upgrade_limit":rune.upgrade_limit,
+					// "upgrade_limit":rune.upgrade_limit,
 					"wizard_id":rune.wizard_id,
-					"wizard_id":rune.wizard_id,
+					// "wizard_id":rune.wizard_id,
 				};
 
 
