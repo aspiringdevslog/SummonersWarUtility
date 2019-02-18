@@ -1,11 +1,11 @@
 window.onload = loadBestiaryJSON();
 
 if(localStorage.getItem('RUNES')!=null){
-	window.onload = getLocalStorageDataToHTML("RUNES", "runes");
+	window.onload = populateHTML("RUNES", "runes");
 }
 
 if(localStorage.getItem('MONS')!=null){
-	window.onload = getLocalStorageDataToHTML("MONS", "monsters");
+	window.onload = populateHTML("MONS", "monsters");
 }
 
 if(localStorage.getItem('IMPORTCHECK')==null){
