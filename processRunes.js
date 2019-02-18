@@ -19,28 +19,30 @@
 function processRunes(runeJSON){
 	// console.log(runeJSON)
 
-	runeList = [];
+	// console.log(runeJSON);
+	const runeHeap = new Heap();
+	if(localStorage.getItem('RUNES')!= null){
+		// runeHeap = JSON.parse(localStorage.getItem('RUNES'));
+		// console.log(JSON.parse(localStorage.getItem('RUNES')));
+		var localStorageHeap = JSON.parse(localStorage.getItem('RUNES'));
 
+		// console.log("existing runes:")
+		// console.log(localStorageHeap.nodes);
+		var existingRunes = localStorageHeap.nodes;
+		// console.log(localStorageHeap.nodes);
 
-	var runeStruct ={
-		"base_value":" ",
-		"class":" ",
-		"extra":" ",
-		"occupied_id":" ",
-		"occupied_type":" ",
-		"prefix_eff":" ",
-		"pri_eff":" ",
-		"rank":" ",
-		"rune_id":" ",
-		"sec_eff":" ",
-		"sell_value":" ",
-		"set_id":" ",
-		"slot_no":" ",
-		"upgrade_curr":" ",
-		"upgrade_limit":" ",
-		"wizard_id":" ",
-		"wizard_id":" ",
-	};
+		for(rune in existingRunes){
+			// console.log(existingRunes[rune]);
+			runeHeap.push(existingRunes[rune]);
+		}
+
+		// runeJSON.push(localStorageHeap.nodes);
+
+		// console.log(runeHeap);
+		// console.log(localStorageHeap.nodes);
+	}
+	
+	// console.log(runeList);
 
 	for (var key in runeJSON){ // each key in runeJSON is an individual rune
 		if(runeJSON.hasOwnProperty(key)){
@@ -52,7 +54,7 @@ function processRunes(runeJSON){
 				var runeStruct ={
 					"base_value":rune.base_value,
 					"stars":rune.class,
-					"defaultGrade":runeQuality(rune.extra), // this is the default grade of the rune, i.e. pre level up
+					// "defaultGrade":runeQuality(rune.extra), // this is the default grade of the rune, i.e. pre level up
 					"occupied_id":rune.occupied_id,
 					"occupied_type":rune.occupied_type,
 
@@ -126,111 +128,21 @@ function processRunes(runeJSON){
 
 				// console.log(runeStruct);
 
-				runeList.push(runeStruct);
+				runeHeap.push(runeStruct);
+				// runeHeap.push(runeStruct);
 
-				// https://coderwall.com/p/ewxn9g/storing-and-retrieving-objects-with-localstorage-html5
-				localStorage.setItem("RUNES", JSON.stringify(runeList));
-
-
-			// for(var attributes in rune){
-			// 	if(rune.hasOwnProperty(attributes)){
-
-			// 		var runeAttributes = rune[attributes];
-
-
-			// 		// console.log(runeAttributes);						
-			// 		// console.log(attributes);
-			// 		// console.log(rune[attributes]);	
-
-			// 	}
-			// }
 		}
 	}
 
 	// console.log(runeList)
+	// console.log(runeHeap);
+
+	// https://coderwall.com/p/ewxn9g/storing-and-retrieving-objects-with-localstorage-html5
+	localStorage.setItem("RUNES", JSON.stringify(runeHeap));
+
+	// console.log(JSON.parse(localStorage.getItem('RUNES')));
 
 }
-
-
-function processRuneAttributes(attribute){
-
-}
-
-//  https://stackoverflow.com/questions/5677799/how-to-append-data-to-div-using-javascript
-// var div = document.getElementById('divID');
-
-// div.innerHTML += 'Extra stuff';
-
-
-// takes a subTypeID and return the Type and Value in an array, e.g. ["HP", "10"]
-
-function checkSubType(subTypeId){
-
-	switch(subTypeId) {
-	  case 0:
-	    return "";
-	    break;		
-	  case 1:
-	    // return "HP Flat";
-	    value = subValue;
-	    break;
-	  case 2:
-	    // return "HP %";
-	    value = subValue;
-	    break;
-	  case 3:
-	  	value = subValue;
-	    // return "ATK Flat";
-	    break;
-	  case 4:
-	  	value = subValue;
-	    // return "ATK %";
-	    break;
-	  case 5:
-	  	value = subValue;
-	    // return "DEF Flat";
-	    break;		
-	  case 6:
-	  	value = subValue;
-	    // return "DEF %";
-	    break;
-	  case 8:
-	  	value = subValue;
-	    // return "SPD";
-	    break;
-	  case 9:
-	  	value = subValue;
-	    // return "CRATE";
-	    break;
-	  case 10:
-	  	value = subValue;
-	    // return "CDMG";
-	    break;	
-	  case 11:
-	  	value = subValue;
-	    // return "RES";
-	    break;
-	  case 12:
-	  	value = subValue;
-	    // return "ACC";
-	    break;	        
-	  default:
-	    // return "NULL"	    
-	}
-}
-
-
-function runeMapper(rawRuneObject) {
-
-	
-				
-
-
-	return processedRuneObject; 
-}
-
-
-
 
 function runeStatType(stat){
 	switch(stat) {

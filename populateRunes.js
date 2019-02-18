@@ -1,5 +1,7 @@
 function populateRunes(){
-	var RUNES = JSON.parse(localStorage.getItem('RUNES'));
+
+	var localStorageRune = JSON.parse(localStorage.getItem('RUNES'));
+	var RUNES = localStorageRune.nodes ;
 	// console.log(RUNES);
 
 //  https://stackoverflow.com/questions/5677799/how-to-append-data-to-div-using-javascript
@@ -14,7 +16,7 @@ function populateRunes(){
 
 	var singleRune = RUNES[0]
 
-	console.log(singleRune);
+	// console.log(singleRune);
 
 	for(var key in singleRune){
 		col.push(key);
@@ -30,7 +32,7 @@ function populateRunes(){
 		tr.appendChild(th);
 	}
 
-	console.log(table);
+	// console.log(table);
 	var divContainer = document.getElementById("runes");
 	divContainer.innerHTML = "";
 	divContainer.appendChild(table);
