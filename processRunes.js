@@ -22,27 +22,16 @@ function processRunes(runeJSON){
 	// console.log(runeJSON);
 	const runeHeap = new Heap();
 	if(localStorage.getItem('RUNES')!= null){
-		// runeHeap = JSON.parse(localStorage.getItem('RUNES'));
-		// console.log(JSON.parse(localStorage.getItem('RUNES')));
-		var localStorageHeap = JSON.parse(localStorage.getItem('RUNES'));
 
-		// console.log("existing runes:")
-		// console.log(localStorageHeap.nodes);
+		var localStorageHeap = JSON.parse(localStorage.getItem('RUNES'));
 		var existingRunes = localStorageHeap.nodes;
-		// console.log(localStorageHeap.nodes);
 
 		for(rune in existingRunes){
-			// console.log(existingRunes[rune]);
 			runeHeap.push(existingRunes[rune]);
 		}
 
-		// runeJSON.push(localStorageHeap.nodes);
-
-		// console.log(runeHeap);
-		// console.log(localStorageHeap.nodes);
 	}
 	
-	// console.log(runeList);
 
 	for (var key in runeJSON){ // each key in runeJSON is an individual rune
 		if(runeJSON.hasOwnProperty(key)){
@@ -134,14 +123,8 @@ function processRunes(runeJSON){
 		}
 	}
 
-	// console.log(runeList)
-	// console.log(runeHeap);
-
 	// https://coderwall.com/p/ewxn9g/storing-and-retrieving-objects-with-localstorage-html5
 	localStorage.setItem("RUNES", JSON.stringify(runeHeap));
-
-	// console.log(JSON.parse(localStorage.getItem('RUNES')));
-
 }
 
 function runeStatType(stat){

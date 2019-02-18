@@ -1,20 +1,20 @@
-function populateRunes(){
+function populateHTML(localKey, divID){
 
-	var div = document.getElementById('runes');
+	var div = document.getElementById(divID);
 	
 	var col = [];
 
-	if(localStorage.getItem('RUNES')!=null){
-		var localStorageRune = JSON.parse(localStorage.getItem('RUNES'));
-		var RUNES = localStorageRune.nodes;
-		var singleRune = RUNES[0]
+	if(localStorage.getItem(localKey)!=null){
+		var localStorageRune = JSON.parse(localStorage.getItem(localKey));
+		var DATA = localStorageRune.nodes;
+		var singleRune = DATA[0]
 
 		for(var key in singleRune){
 			col.push(key);
 		}
 
 		var numCols = col.length;
-		var numRunes = RUNES.length;
+		var numRunes = DATA.length;
 	}
 
 	var table = document.createElement("table");
@@ -28,7 +28,7 @@ function populateRunes(){
 	}
 
 	// console.log(table);
-	var divContainer = document.getElementById("runes");
+	var divContainer = document.getElementById(divID);
 	divContainer.innerHTML = "";
 	divContainer.appendChild(table);
 
@@ -38,9 +38,8 @@ function populateRunes(){
 
 		for (var j = 0; j < col.length; j++) {
 		    var tabCell = tr.insertCell(-1);
-		    tabCell.innerHTML = RUNES[i][col[j]];
+		    tabCell.innerHTML = DATA[i][col[j]];
 		}
 	}
 
 }
-

@@ -47,9 +47,9 @@ function processBestiary(result){
     localStorage.setItem("BESTIARY_MONSTERS", JSON.stringify(monster));
     localStorage.setItem("BESTIARY_SKILL", JSON.stringify(skill));
     localStorage.setItem("BESTIARY_LEADERSKILL", JSON.stringify(leaderskill));
-    localStorage.setItem("BESTIARY_SKILLEFFECT", JSON.stringify(skilleffect));
-    localStorage.setItem("BESTIARY_SKILLEFFECTDETAILS", JSON.stringify(skilleffectdetail));
-    localStorage.setItem("BESTIARY_SCALINGSTAT", JSON.stringify(scalingstat));
+    // localStorage.setItem("BESTIARY_SKILLEFFECT", JSON.stringify(skilleffect));
+    // localStorage.setItem("BESTIARY_SKILLEFFECTDETAILS", JSON.stringify(skilleffectdetail));
+    // localStorage.setItem("BESTIARY_SCALINGSTAT", JSON.stringify(scalingstat));
 
     // console.log(monster);
     // console.log(skill);

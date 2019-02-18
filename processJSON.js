@@ -1,3 +1,75 @@
+function processAll(json){
+
+
+var divContainer = document.getElementById('status').innerHTML;
+
+	// monsterValues = json.unit_list;
+	// // console.log(monsterValues);
+
+	// //TODO: store the monsters list details in an appropriate data structure
+
+// Guide on looping through JSON
+// https://stackoverflow.com/questions/684672/how-do-i-loop-through-or-enumerate-a-javascript-object
+	if(localStorage.getItem('IMPORTCHECK') != 1){
+		console.log("There's currently no data. Begin importing and processing...");
+
+		
+		divContainer = "There's currently no data. Begin importing and processing...";
+
+		for (var key in json){
+
+			if(json.hasOwnProperty(key)){
+				// console.log(key);
+				// console.log(json[key]);
+
+
+					if(key == "runes"){
+						divContainer = "Processing runes...";
+						console.log("Processing runes...");
+						processRunes(json[key]);
+						populateRunes();
+						divContainer = "Rune processing completed.";
+						console.log("Rune processing completed.")
+					// if(localStorage.RUNES == null){
+					// 	console.log("Processing runes...");
+					// 	processRunes(json[key]);
+					// 	populateRunes();
+					// 	console.log("Rune processing completed.")
+					// } else {
+					// 	console.log("Runes data already exists!");
+					// 	populateRunes();
+					// }
+					}
+					if(key == "unit_list"){
+						divContainer = "Processing monsters.";
+						console.log("Processing monsters...");
+						// console.log(json[key]);
+						processMon(json[key]);
+						console.log("Monsters processing completed.")
+						divContainer = "Monsters processing completed.";
+
+					}
+
+
+
+			}
+		}
+
+		console.log("All data has been processed.")
+		divContainer = "All data has been processed.";
+
+
+	} else {
+		console.log("Data already exist!");
+		divContainer = "Data already exist.";
+	}
+
+
+	localStorage.setItem('IMPORTCHECK', 1);
+}
+
+
+
 // // command KEYS
 // processJSON.js:13 ret_code
 // processJSON.js:13 wizard_info
@@ -103,73 +175,3 @@
 // processJSON.js:13 tvalue
 // processJSON.js:13 tvaluelocal
 // processJSON.js:13 tzone
-
-function processAll(json){
-
-
-var divContainer = document.getElementById('status').innerHTML;
-
-	// monsterValues = json.unit_list;
-	// // console.log(monsterValues);
-
-	// //TODO: store the monsters list details in an appropriate data structure
-
-// Guide on looping through JSON
-// https://stackoverflow.com/questions/684672/how-do-i-loop-through-or-enumerate-a-javascript-object
-	if(localStorage.getItem('IMPORTCHECK') != 1){
-		console.log("There's currently no data. Begin importing and processing...");
-
-		
-		divContainer = "There's currently no data. Begin importing and processing...";
-
-		for (var key in json){
-
-			if(json.hasOwnProperty(key)){
-				// console.log(key);
-				// console.log(json[key]);
-
-
-					if(key == "runes"){
-						divContainer = "Processing runes...";
-						console.log("Processing runes...");
-						processRunes(json[key]);
-						populateRunes();
-						divContainer = "Rune processing completed.";
-						console.log("Rune processing completed.")
-					// if(localStorage.RUNES == null){
-					// 	console.log("Processing runes...");
-					// 	processRunes(json[key]);
-					// 	populateRunes();
-					// 	console.log("Rune processing completed.")
-					// } else {
-					// 	console.log("Runes data already exists!");
-					// 	populateRunes();
-					// }
-					}
-					if(key == "unit_list"){
-						divContainer = "Processing monsters.";
-						console.log("Processing monsters...");
-						// console.log(json[key]);
-						processMon(json[key]);
-						console.log("Monsters processing completed.")
-						divContainer = "Monsters processing completed.";
-
-					}
-
-
-
-			}
-		}
-
-		console.log("All data has been processed.")
-		divContainer = "All data has been processed.";
-
-
-	} else {
-		console.log("Data already exist!");
-		divContainer = "Data already exist.";
-	}
-
-
-	localStorage.setItem('IMPORTCHECK', 1);
-}

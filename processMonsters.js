@@ -1,91 +1,3 @@
-// accuracy: 0
-// atk: 582
-// attribute: 1
-// building_id: 0
-// class: 6
-// con: 659
-// costume_master_id: 0
-// create_time: "2017-07-18 18:56:40"
-// critical_damage: 50
-// critical_rate: 15
-// def: 571
-// exp_gain_rate: 0
-// exp_gained: 0
-// experience: 1005420
-// homunculus: 0
-// homunculus_name: ""
-// island_id: 2
-// pos_x: 1
-// pos_y: 9
-// resist: 15
-// runes: (6) [{…}, {…}, {…}, {…}, {…}, {…}]
-// skills: (3) [Array(2), Array(2), Array(2)]
-// source: 0
-// spd: 97
-// trans_items: []
-// unit_id: 4206253322
-// unit_level: 40
-// unit_master_id: 15911
-// wizard_id: 4051550
-
-
-// accuracy: 0
-// archetype: "defense"
-// awaken_bonus: ""
-// awaken_mats_dark_high: 0
-// awaken_mats_dark_low: 0
-// awaken_mats_dark_mid: 0
-// awaken_mats_fire_high: 0
-// awaken_mats_fire_low: 0
-// awaken_mats_fire_mid: 0
-// awaken_mats_light_high: 0
-// awaken_mats_light_low: 0
-// awaken_mats_light_mid: 0
-// awaken_mats_magic_high: 0
-// awaken_mats_magic_low: 0
-// awaken_mats_magic_mid: 0
-// awaken_mats_water_high: 0
-// awaken_mats_water_low: 0
-// awaken_mats_water_mid: 0
-// awaken_mats_wind_high: 0
-// awaken_mats_wind_low: 0
-// awaken_mats_wind_mid: 0
-// awakens_from: null
-// awakens_to: null
-// base_attack: 66
-// base_defense: 96
-// base_hp: 1170
-// base_stars: 1
-// bestiary_slug: "12302-fire-forest-keeper"
-// can_awaken: false
-// com2us_id: 12302
-// craft_cost: null
-// crit_damage: 50
-// crit_rate: 15
-// element: "fire"
-// family_id: 12300
-// farmable: false
-// fusion_food: false
-// homunculus: false
-// image_filename: "unit_icon_0010_2_1.png"
-// is_awakened: false
-// leader_skill: null
-// max_lvl_attack: 362
-// max_lvl_defense: 527
-// max_lvl_hp: 6420
-// name: "Forest Keeper"
-// obtainable: true
-// raw_attack: 33
-// raw_defense: 48
-// raw_hp: 39
-// resistance: 15
-// skill_ups_to_max: 7
-// skills: [4]
-// source: (2) [36, 39]
-// speed: 88
-// transforms_into: null
-// __proto__: Object
-
 function processMon(monJSON){
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/set
 	var bestiaryMap = new Map();
@@ -193,11 +105,6 @@ function attribute(attributeId){
 	}
 }
 
-function getMonsterName(monId){
-
-}
-
-
 function getMonsterBestiary(){
 	
 	var monBestiaryJSON = JSON.parse(localStorage.getItem("BESTIARY_MONSTERS"));
@@ -214,9 +121,95 @@ function getMonsterBestiary(){
 		// console.log(monster);
 		// console.log(monId);
 		// console.log(monData);
-
-
 	}
-
 	return bestiaryMap;
 }
+
+
+// accuracy: 0
+// atk: 582
+// attribute: 1
+// building_id: 0
+// class: 6
+// con: 659
+// costume_master_id: 0
+// create_time: "2017-07-18 18:56:40"
+// critical_damage: 50
+// critical_rate: 15
+// def: 571
+// exp_gain_rate: 0
+// exp_gained: 0
+// experience: 1005420
+// homunculus: 0
+// homunculus_name: ""
+// island_id: 2
+// pos_x: 1
+// pos_y: 9
+// resist: 15
+// runes: (6) [{…}, {…}, {…}, {…}, {…}, {…}]
+// skills: (3) [Array(2), Array(2), Array(2)]
+// source: 0
+// spd: 97
+// trans_items: []
+// unit_id: 4206253322
+// unit_level: 40
+// unit_master_id: 15911
+// wizard_id: 4051550
+
+
+// accuracy: 0
+// archetype: "defense"
+// awaken_bonus: ""
+// awaken_mats_dark_high: 0
+// awaken_mats_dark_low: 0
+// awaken_mats_dark_mid: 0
+// awaken_mats_fire_high: 0
+// awaken_mats_fire_low: 0
+// awaken_mats_fire_mid: 0
+// awaken_mats_light_high: 0
+// awaken_mats_light_low: 0
+// awaken_mats_light_mid: 0
+// awaken_mats_magic_high: 0
+// awaken_mats_magic_low: 0
+// awaken_mats_magic_mid: 0
+// awaken_mats_water_high: 0
+// awaken_mats_water_low: 0
+// awaken_mats_water_mid: 0
+// awaken_mats_wind_high: 0
+// awaken_mats_wind_low: 0
+// awaken_mats_wind_mid: 0
+// awakens_from: null
+// awakens_to: null
+// base_attack: 66
+// base_defense: 96
+// base_hp: 1170
+// base_stars: 1
+// bestiary_slug: "12302-fire-forest-keeper"
+// can_awaken: false
+// com2us_id: 12302
+// craft_cost: null
+// crit_damage: 50
+// crit_rate: 15
+// element: "fire"
+// family_id: 12300
+// farmable: false
+// fusion_food: false
+// homunculus: false
+// image_filename: "unit_icon_0010_2_1.png"
+// is_awakened: false
+// leader_skill: null
+// max_lvl_attack: 362
+// max_lvl_defense: 527
+// max_lvl_hp: 6420
+// name: "Forest Keeper"
+// obtainable: true
+// raw_attack: 33
+// raw_defense: 48
+// raw_hp: 39
+// resistance: 15
+// skill_ups_to_max: 7
+// skills: [4]
+// source: (2) [36, 39]
+// speed: 88
+// transforms_into: null
+// __proto__: Object
