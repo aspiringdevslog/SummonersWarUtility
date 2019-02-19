@@ -7,6 +7,7 @@ function loadBestiaryJSON(){
   // var JSONdata;
   // https://stackoverflow.com/questions/15764844/jquery-getjson-save-result-into-variable
     jQuery.getJSON("/bestiary/bestiary_data.json", processBestiary);
+    jQuery.getJSON("https://veniadgames.com/bestiary/bestiary_data.json", processBestiary); // for local testing
 };
 
 

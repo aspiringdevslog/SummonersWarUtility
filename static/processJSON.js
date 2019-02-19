@@ -27,7 +27,7 @@ var divContainer = document.getElementById('status').innerHTML;
 						divContainer = "Processing runes...";
 						console.log("Processing runes...");
 						processRunes(json[key]);
-						populateHTML("RUNES", "runes");
+						// populateHTML("RUNES", "runes");
 						divContainer = "Rune processing completed.";
 						console.log("Rune processing completed.")
 					// if(localStorage.RUNES == null){
@@ -45,7 +45,7 @@ var divContainer = document.getElementById('status').innerHTML;
 						console.log("Processing monsters...");
 						// console.log(json[key]);
 						processMon(json[key]);
-						populateHTML("MONS", "monsters");
+						// populateHTML("MONS", "monsters");
 						console.log("Monsters processing completed.")
 						divContainer = "Monsters processing completed.";
 

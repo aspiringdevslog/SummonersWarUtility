@@ -3,7 +3,7 @@ function processMon(monJSON){
 	var bestiaryMap = new Map();
 	bestiaryMap = getMonsterBestiary();
 
-	console.log(bestiaryMap.get(12302));
+	// console.log(bestiaryMap.get(12302));
 	// console.log(monBestiary);
 	// console.log(monJSON);
 
@@ -75,7 +75,7 @@ function processMon(monJSON){
 
 		// console.log(monList);
 		localStorage.setItem("MONS", JSON.stringify(monHeap));
-		console.log(monRuneHeap);
+		// console.log(monRuneHeap);
 
 		processRunes(monRuneList);
 	//TODO: store the monsters list details in an appropriate data structure
